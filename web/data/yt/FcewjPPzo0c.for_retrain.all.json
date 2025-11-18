@@ -1,0 +1,62 @@
+[
+  {
+    "id": "FcewjPPzo0c:0",
+    "videoId": "FcewjPPzo0c",
+    "index": 0,
+    "text": "今日もご視聴いただきありがとうございます！\r本日は、重いカルマが解消された人に起こることについてお話ししました。\rみなさんの家の中で一番気になる場所はどこですか？\r↓↓↓ぜひコメントで教えてください✨\r丸儲け住職の公式LINEもぜひチェックしてください！\rhttps://lin.ee/jDWEVj9",
+    "label": "tp",
+    "confidence": 0.95,
+    "relabel": null,
+    "relabel_reason": ""
+  },
+  {
+    "id": "FcewjPPzo0c:1",
+    "videoId": "FcewjPPzo0c",
+    "index": 1,
+    "text": "これ気になってました",
+    "label": "q",
+    "confidence": 0.95,
+    "relabel": null,
+    "relabel_reason": ""
+  },
+  {
+    "id": "FcewjPPzo0c:2",
+    "videoId": "FcewjPPzo0c",
+    "index": 2,
+    "text": "「正語」を心がけます。ネガティブな発言は、自分に悪い縁を結んでしまうんだろうな...😅",
+    "label": "tp",
+    "confidence": 0.95,
+    "relabel": null,
+    "relabel_reason": ""
+  },
+  {
+    "id": "FcewjPPzo0c:3",
+    "videoId": "FcewjPPzo0c",
+    "index": 3,
+    "text": "2階のリビングと倉庫に繋がる隣接する家との隙間ですね夏は風通しが良く、冬は日光が入ってくる偶然の産物ですけど太陽が味方する造りに隙間は猫の通り道で地鎮祭の時も通っててこりゃ仕方ないという喧嘩場所が庭から近くに移動した辺り家が馴染んだ感じが",
+    "label": "ng",
+    "confidence": 0.95,
+    "relabel": null,
+    "relabel_reason": ""
+  },
+  {
+    "id": "FcewjPPzo0c:4",
+    "videoId": "FcewjPPzo0c",
+    "index": 4,
+    "text": "いつも配信ありがとうございます🙏私仕事でお客様に作り笑顔をしています。それはいい事だったのですね‼️それから以前虫の話しをさせていましたが　その時私は最近蚊しか見てないなぁ〜って言っていたのですが　昨晩お家の中にカマキリが入ってきました‼️もちろんお外に逃しましたが　なぜか嬉しく思いました‼️",
+    "label": "ng",
+    "confidence": 0.95,
+    "relabel": null,
+    "relabel_reason": ""
+  },
+  {
+    "id": "FcewjPPzo0c:5",
+    "videoId": "FcewjPPzo0c",
+    "index": 5,
+    "text": "質疑応答、今回も役立ちました。ありがとうございます。",
+    "label": "q",
+    "confidence": 0.99,
+    "relabel": null,
+    "relabel_reason": ""
+  }
+]

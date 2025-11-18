@@ -1,0 +1,99 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Message {
+  id           String   @id
+  serverId     String
+  channelId    String
+  authorId     String
+  authorIsBot  Boolean
+  contentText  String
+  createdAt    BigInt
+  labels       Label[]
+  feedbacks    Feedback[]
+  excludedFromMetrics Boolean @default(false)
+
+  @@index([serverId, createdAt])
+  @@index([serverId, channelId, createdAt])
+  @@index([serverId, excludedFromMetrics, createdAt])                // 追加
+  @@index([serverId, excludedFromMetrics, authorIsBot, createdAt])   // 追加
+}
+
+model Label {
+  id            String   @id @default(cuid())
+  messageId     String
+  message       Message  @relation(fields: [messageId], references: [id], onDelete: Cascade)
+  label         String
+  confidence    Float
+  rationale     String?
+  infoMentions  String?
+  createdAt     DateTime @default(now())
+
+  @@index([messageId])
+  @@index([createdAt])
+}
+
+model Feedback {
+  id         String   @id @default(cuid())
+  messageId  String
+  message    Message  @relation(fields: [messageId], references: [id], onDelete: Cascade)
+  serverId   String
+  channelId  String
+  userId     String?
+  label      String
+  confidence Float?
+  notes      String?
+  createdAt  DateTime @default(now())
+
+  @@index([messageId])
+  @@index([createdAt])
+  // ★（ここに移動）1ユーザー・1メッセージ・1ラベルの重複禁止
+  @@unique([messageId, userId, label], name: "messageId_userId_label")
+}
+
+model Trigger {
+  id        String   @id @default(cuid())
+  serverId  String
+  channelId String?            // optional
+  phrase    String
+  pattern   String?
+  label     String
+  hits      Int      @default(0)
+  weight    Float    @default(1)
+  createdAt DateTime @default(now())
+
+  @@index([serverId])
+  @@unique([serverId, phrase, label], name: "serverId_phrase_label")
+}
+
+model PendingDM {
+  id         String   @id @default(cuid())
+  serverId   String
+  userId     String
+  channelId  String?
+  trigger    String              // "unanswered_q" | "quiet_user" | ...
+  payload    String              // ← Json→String（JSON文字列を保存）
+  lang       String              // "ja" | "en"
+  status     String   @default("queued") // queued|sent|failed|skipped
+  plannedAt  DateTime
+  sentAt     DateTime?
+  error      String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([serverId, status, plannedAt])
+  @@index([serverId, userId, status])
+}
+
+model user_profile {
+  id        String  @id
+  name      String
+  avatarUrl String?
+  updatedAt DateTime @updatedAt
+}

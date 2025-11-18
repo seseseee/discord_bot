@@ -1,0 +1,4 @@
+serverId,channelId,messageId,authorId,createdAt,contentText,label,confidence,info_mentions
+944157981791113287,general,m1759092187,u1,2025-09-28T20:43:07.000Z,"?????? https://example.com/plan.pdf",CH,1,""
+944157981791113287,general,m1759092439,u1,2025-09-28T20:47:19.000Z,"??????? https://example.com/plan.pdf",CH,1,""
+944157981791113287,general,m1759093203,u1,2025-09-28T21:00:03.000Z,"??????? https://example.com/plan.pdf 9/30 13:00",AG|TP|S,0.8,""

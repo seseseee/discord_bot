@@ -1,0 +1,10 @@
+{
+  "v": 1,
+  "updatedAt": "1970-01-01T00:00:00Z",
+  "labelBias": { "AG":1, "TP":1, "EM":1, "S":1, "Q":1, "CH":1, "NG":1 },
+  "triggers": {
+    "agree":1, "praise":1, "emotion":1, "chit":1, "kansaiQ":1,
+    "url|infoKw":1, "datetime":1, "announce":1, "propose":1, "taikei":1, "hedge+topic":1,
+    "negation":1, "majika":1, "empty":1
+  }
+}
