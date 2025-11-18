@@ -17,3 +17,5 @@ dev.db
 # OS ゴミ
 .DS_Store
 Thumbs.db
+.env
+web/.env
